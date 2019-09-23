@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Commodity out</title>
+<link rel="stylesheet" href="css/right.css" >
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="css/jquery.dataTables.min.css">
+
+<!-- <link rel="stylesheet" href="css/datatables.min.css"> -->
+
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script src="js/commodityout.js"></script>
+
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="js/jquery.dataTables.min.js"></script>
+
+<!-- <script src="js/datatables.min.js"></script> -->
+
+
+</head>
+
+<body>
+
+ <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Selling information</h4>
+            </div>
+            <div class="modal-body">
+                <form id="productdetails" method="post">
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">product name:</label>
+                        <input type="text" class="form-control" id="recipient-name" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">price:</label>
+                        <input type="text" class="form-control" id="recipient-name2" disabled/>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">remaining stock:</label>
+                        <input type="text" class="form-control" id="recipient-name4" disabled/>
+                    </div>
+                     <div class="form-group">
+                        <label for="recipient-name" class="control-label"> Purchase quantity:</label>
+                        <input type="text" class="form-control" id="pur_quantity" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "/>                     
+                    </div>    
+                     <div class="form-group">
+                        <label for="recipient-name" class="control-label">Total:</label>
+                        <input type="text" class="form-control" id="Total" disabled />
+                    </div>                
+                     <input id="pid" name="pid" type="text" hidden="true" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnsave">save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<form id="inventoryform"> 
+	<input type="text" id="selecttype" name="selecttype" hidden="true">
+	<input type="text" id="index" name="index" hidden="true">
+	</form> 
+
+	<div id="outresult"> 
+<h1>Product list</h1>
+	<table id="out_table" class="display">
+		<thead>
+		<tr>
+		<th>PRODUCT_NAME</th>
+		<th>PRODUCT_PRICE</th>
+		<th>PRODUCT_SUPPLER</th>
+		<th>PRODUCT_QUANTITY</th>
+		<th>PRODUCT_STATUS</th>
+		<th>BUY</th>
+		</tr>
+		</thead>
+		<tbody id="out_body" class="ft02"></tbody>
+	</table>
+	</div>
+	
+<form id ="shopform">
+	<div id="shopcart"> 
+<h1>Shop Cart</h1>
+	<table id="cart_table" class="display">
+		<thead>
+		<tr>
+		<th>PRODUCT_ID</th>
+		<th>PRODUCT_NAME</th>
+		<th>PRODUCT_PRICE</th>
+		<th>QUANTITY</th>
+		<th>Total</th>
+		</tr>
+		</thead>
+		<tbody id="cart_body" class="ft02"></tbody>
+	</table>
+	</div>	
+	<br>
+	<br>
+	<br>
+	<div id="checkoutresult">
+	<label id="totaltile">Total:</label>
+		<input type="text" id="SumTotal" disabled />
+		<br>
+		<br>
+	<button class="button" id="btnchk">Check Out</button>
+	</div>
+	
+</form>
+</body>
+ 
+</html>
